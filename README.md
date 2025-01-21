@@ -98,9 +98,3 @@ This restores the original file from the transposed files using the password.
 
 
 
-This project demonstrates secure file manipulation techniques using password-based algorithms and efficient memory management.
-
----
-
-Feel free to explore and extend the functionality for your specific needs!
-
