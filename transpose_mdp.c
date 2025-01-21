@@ -232,6 +232,26 @@ int main(int argc, char *argv[])
 
         process_file_mdp(file_name, n); // Process the file into n parts
 
+        char **filenames = (char **)malloc(n * sizeof(char *));
+        for (int i = 0; i < n; i++)
+        {
+            filenames[i] = (char *)malloc(sizeof(char));
+        }
+
+        for (int i = 0; i < n; i++)
+        {
+            sprintf(filenames[i], "file%d.txt", i + 1);
+        }
+
+        int new_position[n];
+        convert_again(new_order, new_position, n);
+        rename_files(filenames, new_position, n);
+
+        for (int i = 0; i < n; i++)
+        {
+            free(filenames[i]);
+        }
+
         // Memory cleanup
         free(new_order);
         free(mdp);
